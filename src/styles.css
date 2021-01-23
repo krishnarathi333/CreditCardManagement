@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+body{
+    background-color: #DCDCDC;
+}
+
+.title{
+    text-align: center;
+    background-color: burlywood;
+    padding: 13px;
+}
+
+.formStyles{
+    border: 4px;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

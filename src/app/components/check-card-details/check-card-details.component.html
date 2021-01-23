@@ -1,0 +1,43 @@
+
+
+<div class="row">
+<h4>Welcome! click on add card detail to add your personal details.</h4>
+    <hr>
+    <div class="cal-md-6" >
+            <Button class="btn btn-primary" (click)="goToAddCardDetails()">Add Card Details</Button>
+
+    </div>
+
+   <hr>
+    <div class="cal-md-6" >
+        <h4>List of Cards</h4>
+        <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Card Number</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Expiry Date</th>
+                <th scope="col">Security Code</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let customer of customers$ | async; let i=index">
+              <tr>
+                <th>{{customer.name}}</th>
+                <td>{{customer.cardNumber}}</td>
+                <td>{{customer.amount}}</td>
+                <td>{{customer.expDate}}</td>
+                <td>{{customer.cvv}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+    </div>
+   
+  </div>
+  
+
+
+
+
+

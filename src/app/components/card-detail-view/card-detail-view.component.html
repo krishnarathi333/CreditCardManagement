@@ -1,0 +1,56 @@
+<h4>Please fill all the details and click continue or click 
+    <a  routerLink="../cardDetails">here</a> to go back</h4>
+<form [formGroup]="getCardForm"   class="formStyles"
+    (ngSubmit)="SubmitCardDetails()" #checkSubmit="ngForm">
+    
+    <div class="col-md-6">
+
+        <table class="table table-hover">
+            <tr>
+              <td><label for="name">Card Holder Name <span class="text-danger">*</span></label></td>
+              <td><input  type="text"class="form-control" formControlName="cardName"><br>
+                <span class="text-danger" *ngIf="getCardForm.get('cardName').hasError('required') && checkSubmit.submitted ||
+                !getCardForm.get('cardName').valid && getCardForm.get('cardName').touched ">
+                    Please enter the Card Holder Name</span></td>
+            </tr>
+            <tr>
+              <td><label for="cnumber">Card Number <span class="text-danger">*</span></label></td>
+              <td><input  type="text" class="form-control" formControlName="cardNumber"><br>
+                <span class="text-danger" *ngIf="getCardForm.get('cardNumber').hasError('required') && checkSubmit.submitted ||
+                !getCardForm.get('cardNumber').valid && getCardForm.get('cardNumber').touched ">
+                  Please enter valid the Card Number</span></td>
+            </tr>
+
+               <tr>
+                <td> <label for="date">Expiry date <span class="text-danger">*</span></label></td>
+                <td> <input  type="date" class="form-control" formControlName="expDate"><br>
+                    <span class="text-danger" *ngIf="getCardForm.get('expDate').hasError('required') && checkSubmit.submitted ||
+                    !getCardForm.get('expDate').valid && getCardForm.get('expDate').touched ">
+                  Please enter the Expiry Date</span></td>
+              </tr>
+
+              <tr>
+                <td><label for="cvv">CVV <span class="text-danger">*</span></label></td>
+                <td><input  type="text" class="form-control" formControlName="securityCode"><br>
+                    <span class="text-danger" *ngIf="getCardForm.get('securityCode').hasError('required') && checkSubmit.submitted ||
+                    !getCardForm.get('securityCode').valid && getCardForm.get('securityCode').touched ">
+                        Please enter the valid 3 digit CVV / Security Code</span></td>
+              </tr>
+
+              <tr>
+                <td> <label for="amount">Amount <span class="text-danger">*</span></label></td>
+                <td><input  type="text" class="form-control" formControlName="amount"><br>
+                    <span class="text-danger" *ngIf="getCardForm.get('amount').hasError('required') && checkSubmit.submitted ||
+                   !getCardForm.get('amount').valid && getCardForm.get('amount').touched ">
+                Please enter the valid Amount</span></td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td> <button type="submit" class="btn btn-primary" >Continue</button></td>
+              </tr>
+           </table>
+
+    </div>
+
+    
+  </form>
